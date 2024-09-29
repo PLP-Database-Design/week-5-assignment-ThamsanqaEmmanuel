@@ -1,0 +1,86 @@
+<h1>Patient's Information</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Patient ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Date Of Birth</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% results.forEach(row => { %>
+            <tr>
+                <td><%= row.patient_id %></td>
+                <td><%= row.first_name %></td>
+                <td><%= row.last_name %></td>
+                <td><%= row.date_of_birth.toISOString().split('T')[0] %></td>
+            </tr>
+        <% }); %>
+    </tbody>
+</table><br>
+
+<h1>Provider's Information</h1>
+<table>
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Provider Specialty</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% providersResults.forEach(row => { %>
+            <tr>
+                <td><%= row.first_name %></td>
+                <td><%= row.last_name %></td>
+                <td><%= row.provider_specialty %></td>
+            </tr>
+        <% }); %>
+    </tbody>
+</table><br>
+
+<h1> Filter patients by First Name</h1>
+<table>
+    <thead>
+        <tr>
+            
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Date of birth</th>
+            <th>Patient ID</th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        <% results.forEach(row => { %>
+            <tr>
+               
+                <td><%= row.first_name %></td>
+                <td><%= row.last_name %></td>
+                <td><%= row.date_of_birth.toISOString().split('T')[0] %></td>
+                <td><%= row.patient_id %></td>
+            </tr>
+        <% }); %>
+    </tbody>
+</table><br>
+
+<h1>Retrieve all providers by their specialty</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Provider Specialty</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% providersResults.forEach(row => { %>
+            <tr>
+                <td><%= row.provider_specialty %></td>
+                <td><%= row.first_name %></td>
+                <td><%= row.last_name %></td>
+            </tr>
+        <% }); %>
+    </tbody>
+</table>
